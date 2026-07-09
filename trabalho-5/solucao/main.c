@@ -15,7 +15,6 @@ No* criarNo(int valor) {
     return novoNo;
 }
 
-// Função para imprimir a árvore deitada (corrigida)
 void imprimirArvore(No* raiz, int espaco) {
     if (raiz == NULL) {
         return;
@@ -24,17 +23,13 @@ void imprimirArvore(No* raiz, int espaco) {
     int dist = 5;
     espaco += dist;
 
-    // Processa a subárvore direita
     imprimirArvore(raiz->dir, espaco);
 
-    // Sem o \n solto aqui, a árvore fica compacta!
     for (int i = dist; i < espaco; i++) {
         printf(" ");
     }
-    // Adicionando um indicador visual para o nó
     printf("-> %d\n", raiz->valor);
 
-    // Processa a subárvore esquerda
     imprimirArvore(raiz->esq, espaco);
 }
 
